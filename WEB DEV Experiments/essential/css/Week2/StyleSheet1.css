@@ -1,0 +1,10 @@
+﻿body {
+    padding-top: 70px;
+    background-color:#00ffe0;
+}
+
+.description{
+    text-align:justify;
+    text-shadow:1px 1px #ed5050;
+    word-spacing:2%;
+}
