@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery1</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../javascript/Week4/JavaScript.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body>
+    <div>
+        <hr/>
+    </div>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="toggle">Toggle</button>
+    <div>
+        <hr/>
+    </div>
+    <div id="one">This Document gets hidden or shown on button click</div>
+    <div id="two">This Document is used to demonstrate toggle button click</div>
+    
+    <div>
+        <h3>Description</h3>
+        <p>
+            Jquery show,hide and toggle functions are experimented here
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below will show hide and toggle the document</p>
+    <pre>
+        $(document).ready(function () {
+    $(&quot;#toggle&quot;).click(function () {
+        $(&quot;#two&quot;).toggle();
+    });
+    $(&quot;#hide&quot;).click(function () {
+        $(&quot;#one&quot;).hide();
+    });
+    $(&quot;#show&quot;).click(function () {
+        $(&quot;#one&quot;).show();
+    });
+});
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week4/Html_Page_1.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+    <a href="../../fileview/Default.aspx?~/javascript/Week4/JavaScript.js" target="_blank">
+        View JavaScript
+    </a>
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+</body>
+</html>

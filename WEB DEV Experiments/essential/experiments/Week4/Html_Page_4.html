@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment4</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../javascript/Week4/JavaScript4.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet2.css" />
+    
+</head>
+<body>
+
+    <p>Experiment to show fade in and fade out functions</p>
+
+    <button id="fadein">Click to fade in boxes</button>
+    <button id="fadeout">Click to fade out boxes</button><br><br><br><br>
+
+    <div id="color1"></div><br>
+    <div id="color2"></div><br>
+    <div id="color3"></div><br>
+    <div id="color4"></div><br>
+    <div id="color5"></div><br>
+    <div id="color6"></div><br>
+    <h3>Description</h3>
+    <p>This Experiment is to show using fade in and fade out functions to change the dimension of the DOM in Jquery</p>
+
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below will animate the object</p>
+    <pre>
+           $(document).ready(function () {
+    $(&quot;#fadein&quot;).click(function () {
+        $(&quot;#color1&quot;).fadeIn();
+        $(&quot;#color2&quot;).fadeIn(&quot;slow&quot;);
+        $(&quot;#color3&quot;).fadeIn(3000);
+    });
+    $(&quot;#fadeout&quot;).click(function () {
+        $(&quot;#color4&quot;).fadeOut();
+        $(&quot;#color5&quot;).fadeOut(&quot;slow&quot;);
+        $(&quot;#color6&quot;).fadeOut(3000);
+    });
+});
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week4/Html_Page_4.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet2.css" target="_blank">
+        View CSS
+    </a>
+    <a href="../../fileview/Default.aspx?~/javascript/Week4/JavaScript4.js" target="_blank">
+        View JavaScript
+    </a>
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>

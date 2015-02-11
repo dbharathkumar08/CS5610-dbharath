@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment-5 -animation</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../javascript/Week4/JavaScript5.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet2.css" />
+</head>
+<body>
+
+    <button>Click to animate</button>
+
+    <hr/>
+    <br />
+
+    <div id="animation5">
+        <img id="toggle" src="../../images/indian_flag.png" alt="Flag" title="Indian_Flag" />
+    </div>
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+    <h3>Description</h3>
+    <p>This Experiment is to show using animation to change the dimension of the DOM in Jquery</p>
+
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below will animate the object</p>
+    <pre>
+           $(document).ready(function () {
+    $(&quot;button&quot;).click(function () {
+        var div = $(&quot;div&quot;);
+        div.animate({ height: &apos;300px&apos;, opacity: &apos;0.4&apos; }, &quot;slow&quot;);
+        div.animate({ width: &apos;300px&apos;, opacity: &apos;0.8&apos; }, &quot;slow&quot;);
+        div.animate({ height: &apos;100px&apos;, opacity: &apos;0.4&apos; }, &quot;slow&quot;);
+        div.animate({ width: &apos;100px&apos;, opacity: &apos;0.8&apos; }, &quot;slow&quot;);
+    });
+});
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week4/Html_Page_5.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet2.css" target="_blank">
+        View CSS
+    </a>
+    <a href="../../fileview/Default.aspx?~/javascript/Week4/JavaScript5.js" target="_blank">
+        View JavaScript
+    </a>
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+
+</body>
+</html>

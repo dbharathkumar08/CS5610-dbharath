@@ -1,0 +1,36 @@
+﻿body {
+     background-color:#00ffe0;
+}
+#rectangle{
+background:#98bf21;height:100px;position:absolute;
+}
+#toggle{
+background:#98bf21;height:100px;width:200px;position:absolute;
+}
+#space{
+background:#00ffe0;height:100px;width:200px;position:absolute;
+}
+#verticalLine{
+    border-left:thick solid #000000;height:250px;
+}
+#animation5{
+    background:#98bf21;height:100px;width:100px;position:absolute;
+}
+#color1{
+    width:80px;height:80px;display:none;background-color:red;
+}
+#color2{
+    width:80px;height:80px;display:none;background-color:green;
+}
+#color3{
+    width:80px;height:80px;display:none;background-color:blue;
+}
+#color4{
+    width:80px;height:80px;display:normal;background-color:red;
+}
+#color5{
+    width:80px;height:80px;display:normal;background-color:green;
+}
+#color6{
+    width:80px;height:80px;display:normal;background-color:blue;
+}

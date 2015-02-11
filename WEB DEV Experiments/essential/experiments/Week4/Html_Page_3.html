@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation - Experiment 3</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../javascript/Week4/JavaScript3.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet2.css" />
+</head>
+<body>
+
+    <button>Furl or Unfurl the Falg</button>
+
+    <h3>INDIAN NATIONAL FLAG</h3>
+
+    
+        <img id="toggle" src="../../images/indian_flag.png" alt="Flag" title="Indian_Flag" height="100" width="200" />
+  
+
+ 
+    <div id="verticalLine">
+        
+    </div>
+
+    <h3>Description</h3>
+    <p>This Experiment describes using animation to toggle the DOM in Jquery</p>
+
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below will show hide and toggle the document</p>
+    <pre>
+               $(document).ready(function () {
+    $(&quot;button&quot;).click(function () {
+        $(&quot;#toggle&quot;).animate({
+            width: &apos;toggle&apos;
+         });
+        });
+    });
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week4/Html_Page_3.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet2.css" target="_blank">
+        View CSS
+    </a>
+    <a href="../../fileview/Default.aspx?~/javascript/Week4/JavaScript3.js" target="_blank">
+        View JavaScript
+    </a>
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>
