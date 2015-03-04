@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../javascript/Week7/JavaScript.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+    <script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").load("demo.txt", function(responseTxt, statusTxt, xhr){
+            if(statusTxt == "success")
+                alert("External content loaded successfully!");
+            if(statusTxt == "error")
+                alert("Error: " + xhr.status + ": " + xhr.statusText);
+        });
+    });
+});
+    </script>
+</head>
+<body>
+
+    <div id="div1"><h2>Text Changed due to Jquery and Ajax</h2></div>
+
+    <button>Load Content</button>
+    <div>
+        <h3>Description</h3>
+        <p>
+            Ajax
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below will demonstrate content loading by Ajax</p>
+    <pre>
+ $(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        $(&quot;#div1&quot;).load(&quot;demo.txt&quot;, function(responseTxt, statusTxt, xhr){
+            if(statusTxt == &quot;success&quot;)
+                alert(&quot;External content loaded successfully!&quot;);
+            if(statusTxt == &quot;error&quot;)
+                alert(&quot;Error: &quot; + xhr.status + &quot;: &quot; + xhr.statusText);
+        });
+    });
+});
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week7/HtmlPage3.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+    <a href="../../fileview/Default.aspx?~/css/experiments/Week7/demo.txt" target="_blank">
+        View Content
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>

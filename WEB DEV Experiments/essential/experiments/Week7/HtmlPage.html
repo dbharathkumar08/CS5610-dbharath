@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON object parse</title>
+    <script src="../../javascript/Week7/JavaScript.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body>
+
+    <h2>Javascript used to parse the JSON object</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        var text = '{"name":"Bharath kumar D","street":"147 Marcella St Boston","phone":"6692258733"}'
+
+        var obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML =
+    obj.name + "<br>" +
+    obj.street + "<br>" +
+    obj.phone;
+    </script>
+    <div>
+        <h3>Description</h3>
+        <p>
+            JSON object parsing using javascript
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below will show hide and toggle the document</p>
+    <pre>
+var text = &apos;{&quot;name&quot;:&quot;Bharath kumar D&quot;,&quot;street&quot;:&quot;147 Marcella St Boston&quot;,&quot;phone&quot;:&quot;6692258733&quot;}&apos;
+        var obj = JSON.parse(text);
+        document.getElementById(&quot;demo&quot;).innerHTML =
+    obj.name + &quot;&lt;br&gt;&quot; +
+    obj.street + &quot;&lt;br&gt;&quot; +
+    obj.phone;
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week7/HtmlPage.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>

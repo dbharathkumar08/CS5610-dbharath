@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../javascript/Week7/JavaScript.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+    <script>
+function showHint(str)
+{
+var xmlhttp;
+if (str.length==0)
+  {
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","hint.asp?q="+str,true);
+xmlhttp.send();
+}
+    </script>
+</head>
+<body>
+
+    <h3>Start typing a name in the input field below:</h3>
+    <form action="">
+        First name: <input type="text" id="txt1" onkeyup="showHint(this.value)" />
+    </form>
+    <p>Suggestions: <span id="txtHint"></span></p>
+
+    <div>
+        <h3>Description</h3>
+        <p>Code Below will demonstrate content Ajax with the asp script which helps in input prediction</p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+
+    <pre>
+function showHint(str)
+{
+var xmlhttp;
+if (str.length==0)
+  {
+  document.getElementById(&quot;txtHint&quot;).innerHTML=&quot;&quot;;
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+    {
+    document.getElementById(&quot;txtHint&quot;).innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open(&quot;GET&quot;,&quot;hint.asp?q=&quot;+str,true);
+xmlhttp.send();
+}
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week7/HtmlPage5.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+    <a href="../../fileview/Default.aspx?~/css/experiments/Week7/hint.asp" target="_blank">
+        View ASP
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>
+

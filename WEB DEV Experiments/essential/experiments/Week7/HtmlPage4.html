@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../javascript/Week7/JavaScript.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body>
+
+    <div id="id01"></div>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var url = "Links.txt";
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var myArr = JSON.parse(xmlhttp.responseText);
+                myFunction(myArr);
+            }
+        }
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+
+        function myFunction(arr) {
+            var out = "";
+            var i;
+            for (i = 0; i < arr.length; i++) {
+                out += '<a href="' + arr[i].url + '">' +
+                arr[i].display + '</a><br>';
+            }
+            document.getElementById("id01").innerHTML = out;
+        }
+    </script>
+    <div>
+        <h3>Description</h3>
+        
+        <p>Code Below will demonstrate content loading by Ajax from an external text file</p>
+        
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    
+    <pre>
+var xmlhttp = new XMLHttpRequest();
+        var url = &quot;Links.txt&quot;;
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 &amp;&amp; xmlhttp.status == 200) {
+                var myArr = JSON.parse(xmlhttp.responseText);
+                myFunction(myArr);
+            }
+        }
+        xmlhttp.open(&quot;GET&quot;, url, true);
+        xmlhttp.send();
+        function myFunction(arr) {
+            var out = &quot;&quot;;
+            var i;
+            for (i = 0; i &lt; arr.length; i++) {
+                out += &apos;&lt;a href=&quot;&apos; + arr[i].url + &apos;&quot;&gt;&apos; +
+                arr[i].display + &apos;&lt;/a&gt;&lt;br&gt;&apos;;
+            }
+            document.getElementById(&quot;id01&quot;).innerHTML = out;
+        }
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week7/HtmlPage4.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+    <a href="../../fileview/Default.aspx?~/css/experiments/Week7/Links.txt" target="_blank">
+        View Content
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>

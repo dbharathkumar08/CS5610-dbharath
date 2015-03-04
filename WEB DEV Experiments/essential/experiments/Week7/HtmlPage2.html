@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON object manupulation</title>
+    <script src="../../javascript/Week7/JavaScript.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body>
+
+    <h2>How to Change JSON object </h2>
+
+    <h3>Original Data</h3>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <hr/>
+    <h3>After the Change in Data</h3>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <hr/>
+
+    <script>
+        var employees = [
+            {
+                "firstName": "Bharath",
+                "lastName": "Kumar"
+            },
+            {
+                "firstName": "Murali",
+                "lastName": "Vijay"
+            },
+            {
+                "firstName": "Dinesh",
+                "lastName": "Mongia"
+            },
+        ];
+        
+        document.getElementById("demo").innerHTML =
+        employees[0].firstName + " " + employees[0].lastName;
+        document.getElementById("demo1").innerHTML =
+        employees[1].firstName + " " + employees[1].lastName;
+        document.getElementById("demo2").innerHTML =
+        employees[2].firstName + " " + employees[2].lastName;
+        employees[0].firstName = "Kishor";
+        employees[1]["lastName"] = "Karthik";
+        employees[1]["firstName"] = "Nayan";
+
+        document.getElementById("demo3").innerHTML =
+        employees[0].firstName + " " + employees[0].lastName;
+        document.getElementById("demo4").innerHTML =
+        employees[1].firstName + " " + employees[1].lastName;
+        document.getElementById("demo5").innerHTML =
+        employees[2].firstName + " " + employees[2].lastName;
+    </script>
+    <div>
+        <h3>Description</h3>
+        <p>
+            JSON object manipulation
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below will show JSON object manipulation</p>
+    <pre>
+ var employees = [
+            {
+                &quot;firstName&quot;: &quot;Bharath&quot;,
+                &quot;lastName&quot;: &quot;Kumar&quot;
+            },
+            {
+                &quot;firstName&quot;: &quot;Murali&quot;,
+                &quot;lastName&quot;: &quot;Vijay&quot;
+            },
+            {
+                &quot;firstName&quot;: &quot;Dinesh&quot;,
+                &quot;lastName&quot;: &quot;Mongia&quot;
+            },
+        ];
+        
+        document.getElementById(&quot;demo&quot;).innerHTML =
+        employees[0].firstName + &quot; &quot; + employees[0].lastName;
+        document.getElementById(&quot;demo1&quot;).innerHTML =
+        employees[1].firstName + &quot; &quot; + employees[1].lastName;
+        document.getElementById(&quot;demo2&quot;).innerHTML =
+        employees[2].firstName + &quot; &quot; + employees[2].lastName;
+        employees[0].firstName = &quot;Kishor&quot;;
+        employees[1][&quot;lastName&quot;] = &quot;Karthik&quot;;
+        employees[1][&quot;firstName&quot;] = &quot;Nayan&quot;;
+        document.getElementById(&quot;demo3&quot;).innerHTML =
+        employees[0].firstName + &quot; &quot; + employees[0].lastName;
+        document.getElementById(&quot;demo4&quot;).innerHTML =
+        employees[1].firstName + &quot; &quot; + employees[1].lastName;
+        document.getElementById(&quot;demo5&quot;).innerHTML =
+        employees[2].firstName + &quot; &quot; + employees[2].lastName;
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week7/HtmlPage2.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>
