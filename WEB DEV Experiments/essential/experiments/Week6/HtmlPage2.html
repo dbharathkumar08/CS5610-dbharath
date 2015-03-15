@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular JS 2</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/JavaScript2.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body ng-app="sportsApp">
+    <div ng-controller="sportController" class="container">
+        <h1>Sport Listing</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>country</th>
+                    <th>popularity</th>
+                    <th>description</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th><input ng-model="sport.name" class="form-control" /></th>
+                    <th><input ng-model="sport.country" class="form-control" /></th>
+                    <th><input ng-model="sport.popularity" class="form-control" /></th>
+                    <th><input ng-model="sport.description" class="form-control" /></th>
+                    <th>
+                        <button ng-click="updatesport()" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button ng-click="addsport()" class="btn btn-success">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sport in sports">
+                    <td>{{sport.name}}</td>
+                    <td>{{sport.country}}</td>
+                    <td>{{sport.popularity}}</td>
+                    <td>{{sport.description}}</td>
+                    <td>
+                        <button ng-click="selectsport(sport)" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button ng-click="removesport(sport)" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h3>Description</h3>
+        <p>
+            This experiments shows how the UI is tightly bound with the controller and usage of add delete angular JS functions
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Shows the MVC Behaviour of Angular JS</p>
+    <pre>
+                $scope.addsport = function()
+    {
+        var newsport = {
+            name: $scope.sport.name,
+            popularity: $scope.sport.popularity,
+            country: $scope.sport.country,
+            description: $scope.sport.description
+        };
+        $scope.sports.push(newsport);
+    }
+    $scope.removesport = function(sport)
+    {
+        var index = $scope.sports.indexOf(sport);
+        $scope.sports.splice(index, 1);
+    }
+    $scope.selectsport = function(sport)
+    {
+        $scope.sport = sport;
+    }
+    $scope.updatesport = function()
+    {
+        alert($scope.sport.name);
+    }       
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/HtmlPage2.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/js/JavaScript2.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <h2>Professor Class Examples</h2>
+    <hr />
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   
+    <title>Angular JS</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/JavaScript.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body ng-app="HelloWorldApp">
+    <div ng-controller="HelloWorldController">
+        <h1>Angular JS Example 1</h1>
+        <h2>Contents Displayed in a table</h2>
+        <table class="table table-striped">
+            <tr ng-repeat="e in employees">
+                <td>{{e.first}}</td>
+                <td>{{e.last}}</td>
+                <td>{{e.salary}}</td>
+                <td>{{e.Location}}</td>
+            </tr>
+        </table>
+        <h2>Displaying a single content</h2>
+        <p>
+            {{employee.first}}
+            {{employee.last}}
+        </p>      
+        <br />  
+    </div>
+    <div>
+        <h3>Description</h3>
+        <p>
+            This experiments shows how the UI can be populated by angular JS, which is used as a controller to display the model on the view - HTML
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Shows the MVC Behaviour of Angular JS</p>
+    <pre>
+               &lt;div ng-controller=&quot;HelloWorldController&quot;&gt;
+        &lt;h1&gt;Hello World Angular Application&lt;/h1&gt;
+        &lt;h2&gt;Contents Displayed ina table&lt;/h2&gt;
+        &lt;table class=&quot;table table-striped&quot;&gt;
+            &lt;tr ng-repeat=&quot;e in employees&quot;&gt;
+                &lt;td&gt;{{e.first}}&lt;/td&gt;
+                &lt;td&gt;{{e.last}}&lt;/td&gt;
+                &lt;td&gt;{{e.salary}}&lt;/td&gt;
+                &lt;td&gt;{{e.Location}}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;h2&gt;Displaying a single content&lt;/h2&gt;
+        &lt;p&gt;
+            {{employee.first}}
+            {{employee.last}}
+        &lt;/p&gt;      
+        &lt;br /&gt;  
+    &lt;/div&gt;
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/HtmlPage.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/js/JavaScript.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <h2>Professor Class Examples</h2>
+    <hr />
+  
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<html ng-app="myNoteApp">
+
+<head>
+    <title>Angular JS 5</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular.min.js.map"></script>
+    <script src="js/JavaScript5.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+
+<body>
+    <h2>Experiment 5- Angular JS</h2>
+    <div ng-controller="myNoteCtrl">
+
+        <h2>Sample Note</h2>
+
+        <p><textarea ng-model="message" cols="40" rows="10" maxlength="100"></textarea></p>
+
+        <p>
+            <button ng-click="save()">Save</button>
+            <button ng-click="clear()">Clear</button>
+        </p>
+
+        <p>Number of characters left: <span ng-bind="left()"></span></p>
+
+    </div>
+
+    
+
+    <div>
+        <h3>Description</h3>
+        <p>
+            This experiments gives how the UI can change content dynamically using AngularJS
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>
+        This experiment computes the words that be entered dynamically.
+    </p>
+    <pre>
+        var app = angular.module(&quot;myNoteApp&quot;, []);
+app.controller(&quot;myNoteCtrl&quot;, function ($scope) {
+    $scope.message = &quot;&quot;;
+    $scope.left = function () { return 100 - $scope.message.length; };
+    $scope.clear = function () { $scope.message = &quot;&quot;; };
+    $scope.save = function () { alert(&quot;Taken Note of this.&quot;); };
+});    
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/HtmlPage5.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/js/JavaScript5.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+</body>
+</html>

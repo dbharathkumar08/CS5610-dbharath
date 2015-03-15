@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Angular JS 4</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular.min.js.map"></script>
+    <script src="js/JavaScript4.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+
+<body>
+    <h2>Experiment 4- Angular JS</h2>
+    <div ng-app="myApp" ng-controller="formController">
+        <form novalidate>
+            First Name:<br>
+            <input type="text" ng-model="user.firstName"><br>
+            Last Name:<br>
+            <input type="text" ng-model="user.lastName">
+            <br><br>
+            <button ng-click="reset()" class="btn btn-danger">RESET USER</button>
+            <button ng-click="copymaster()" class="btn btn-success">COPY TO MASTER</button>
+            <button ng-click="copyfrommaster()" class="btn btn-warning">COPY FROM MASTER</button>
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th>USER</th>
+                <th>MASTER</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr><td>{ firstName: {{user.firstName}} , lastName: {{user.lastName}}}</td>
+                    <td>{ firstName: {{master.firstName}} , lastName: {{master.lastName}}}</td></tr>
+            
+            </tbody>
+       </table>
+    </div>
+
+    <div>
+        <h3>Description</h3>
+        <p>
+            This experiment on the button click of reset, clears the form.
+            On COPY TO MASTER, makes the user a master.
+            ON COPY FROM MASTER, copies the values from master to user.
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>
+        This experiment makes use of the functions to keep a temporary copy of the fields.
+    </p>
+    <pre>
+    angular.module(&apos;myApp&apos;, []).controller(&apos;formController&apos;, [&apos;$scope&apos;, function ($scope) {
+    $scope.master = { firstName: &quot;Bhagat&quot;, lastName: &quot;Singh&quot; };
+    $scope.reset = function () {
+        $scope.user = { firstName: &quot;&quot;, lastName: &quot;&quot; };;
+    };
+   
+    $scope.copymaster = function () {
+        $scope.master = angular.copy($scope.user);
+    };
+   
+    $scope.copyfrommaster = function () {
+        $scope.user = angular.copy($scope.master);
+    };
+   
+}]);     
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/HtmlPage4.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/js/JavaScript4.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Angular JS 3</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular.min.js.map"></script>
+    <script src="js/JavaScript3.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+
+<body>
+    <h2>Angular JS Experiment</h2>
+    <div ng-app="myApp" ng-controller="costController">
+
+        Quantity: <input type="number" ng-model="quantity">
+        Price: <input type="number" ng-model="price">
+        
+        <p>Total = {{ (quantity * price) | currency }}</p>
+
+    </div>
+    <div>
+        <h3>Description</h3>
+        <p>
+            This experiments shows the initialisation of the values and the changes done in the inout field.
+            As you change the values of the quantity and price, you will get the Total which is the product of these two 
+            parameters.We use currency filter.
+        </p>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>This code snippet shows how the Angular JS model is tightly bount to the HTML, and also how the change in 
+    one field reflects in the other
+    Currency filter will format the number as currency</p>
+    <pre>
+                $scope.addsport = function()
+    {
+        var newsport = {
+            name: $scope.sport.name,
+            popularity: $scope.sport.popularity,
+            country: $scope.sport.country,
+            description: $scope.sport.description
+        };
+        $scope.sports.push(newsport);
+    }
+    $scope.removesport = function(sport)
+    {
+        var index = $scope.sports.indexOf(sport);
+        $scope.sports.splice(index, 1);
+    }
+    $scope.selectsport = function(sport)
+    {
+        $scope.sport = sport;
+    }
+    $scope.updatesport = function()
+    {
+        alert($scope.sport.name);
+    }       
+    </pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/HtmlPage3.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/Week6/js/JavaScript3.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/css/Week4/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <hr />
+
+    <h4>References</h4>
+    <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+    <hr />
+   
+
+</body>
+</html>
