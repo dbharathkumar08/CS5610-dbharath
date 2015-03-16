@@ -34,29 +34,11 @@
     one field reflects in the other
     Currency filter will format the number as currency</p>
     <pre>
-                $scope.addsport = function()
-    {
-        var newsport = {
-            name: $scope.sport.name,
-            popularity: $scope.sport.popularity,
-            country: $scope.sport.country,
-            description: $scope.sport.description
-        };
-        $scope.sports.push(newsport);
-    }
-    $scope.removesport = function(sport)
-    {
-        var index = $scope.sports.indexOf(sport);
-        $scope.sports.splice(index, 1);
-    }
-    $scope.selectsport = function(sport)
-    {
-        $scope.sport = sport;
-    }
-    $scope.updatesport = function()
-    {
-        alert($scope.sport.name);
-    }       
+                        angular.module(&apos;myApp&apos;, []).controller(&apos;costController&apos;, [&apos;$scope&apos;, function ($scope) {
+    $scope.quantity = 1;
+    $scope.price = 20;
+  
+}]);
     </pre>
     <hr />
     <h4>Source Code </h4>
