@@ -11,76 +11,20 @@
 <head>
 
 <meta charset='utf-8' />
-
-<title>Demo Home Page</title>
-
-<style type="text/css">
-    ul.master_navigation
-    {
-        font-size: 100%;
-        font-weight: bold;
-        text-align: center;
-        list-style: none;
-        margin: 0.5em 0;
-        padding: 0;
-    }
-
-    ul.master_navigation li
-    {
-        display: inline-block;
-        padding: 0 0.5%;
-    }
-
-    a
-    {
-        color: #08f;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    a:visited
-    {
-        color: #88f;
-    }
-
-    a:hover
-    {
-        color: #f00;
-    }
-
-    p
-    {
-        text-align: justify;
-    }
-</style>
-
-<style type="text/css" media="screen">
-    body {
-        width:900px;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        background-image:url(images/background.jpg);
-        text-emphasis-color:red;
-    }
-
-    .pad {
-        padding: 10px;
-    }
-    .intro{
-        color:red;
-    }
-</style>
-
+    <title>Bharath kumar Dayananda</title>
+    
+    
+    <link rel="stylesheet" href="css/HomePage.css">
+
 </head>
-
 <body>
+<div id="header">
+    <div id="name"><h3>Bharath kumar Dayananda</h3>
+        <p>CS5610 - WEB DEVELOPMENT COURSE</p>
+    </div>
+</div>
 
-<div class="pad">
-
-<form id="form1" runat="server">
-
-<div>
+<div id="links">
 
 <ul class="master_navigation">
     <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
@@ -98,53 +42,39 @@
 
 <hr />
 
-
-
-<hr />
-
-<p class="intro">
-    
-    I am a Northeastern Student pursuing MS in Computer Science.
+<div class="content">
+    <div class="first_column fl">
+        <div class="image"><img class="profile" src="images/bharath.jpg"></div>
+        <div class="personal_info">
+            <div class="contact_info h_divider">
+                <p id="detail">M.S. in Computer Science<br/>
+                    Northeastern University, Boston<br/>
+                    dbharath@ccs.neu.edu<br/>
+                    (+1)6692258733
+                </p>
+            </div> 
+        </div>
+    </div>
+    <div class="second_column fl vl_divider">
+        <div class="heading">About me:</div>
+        <p id="content">   I am a Northeastern Student pursuing MS in Computer Science.
     This is my project website for Web Development course.
-</p>
-
-<hr />
-
-<p>
-    <img src="images/bharath.jpg"  height="400" width="400"> 
-    
-</p>
-    
-<hr />
-
-    <p>
-Here is the link to my
-<a href="https://github.com/dbharathkumar08/CS5610-dbharath" target="_blank">Git Hub </a>
-This Link takes you to my GitHub Repository
-</p>
-
-<p>
-Here is a link to the
-<a href="story/index.htm" target="_blank">Story Utility</a>
-on this site so that you may explore this tool.
-</p>
-
-<p>
-Here is a link to the
-<a href="http://www.northeastern.edu/rasala/webstories.htm"
-        target="_blank">Web Development Stories</a>
-so that you may see a good collection of online documentation.
-</p>
-
-
-
-<hr />
-
+        </p>
+       
+    </div>
+    <div class="third_column fl vl_divider h_divider">
+        <div class="heading">Project Information:  </div>
+        <div class="project_links h_divider">           
+            <div class="project"><a href="https://github.com/dbharathkumar08/CS5610-dbharath" target="_blank"><p>GitHub Source Code</p></a></div>
+            <div class="project"><a href="#" target="_blank"><p>Project</p></a></div>
+            <div class="project_doc"><a href="#" target="_blank"><p>Project Documentation</p></a></div>
+        </div>
+    </div>  
 </div>
+    <div class="footer">
+© 2015 Bharath kumar Dayananda - CS5610 Web Development course. All rights reserved.</div>
 
-</form>
-
-</div>
+
 
 </body>
 </html>
