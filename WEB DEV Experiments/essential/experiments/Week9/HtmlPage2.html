@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <title>Profile_Login</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/StyleSheet.css" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/Week9/JavaScript2.js"></script>
+</head>
+
+<body class="container" ng-app="MovieAPIAPP">
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Descrption</h2>
+    <hr />
+    <p>
+        This experiment involves usage of APIs that is used by my project inorder to fetch data .
+        Here I fetch all the categories that can be fetched from the WEB API.
+        I try to fetch all the movies in a particular genre.
+    </p>
+
+    <h2>Experiment Demo</h2>
+    <hr />
+    <div ng-controller="MovieAPICONTROLLER">
+        <button class="btn btn-primary" ng-click="fetchGenres()"> Fetch Categories </button>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr ng-repeat="genre in genres">
+                            <td>
+                                <button class="btn subtitle" ng-click="fetchTitles(genre.id)">{{genre.name}}</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <ul ng-repeat="movie in movies">
+                    <li>{{movie.original_title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+    var app = angular.module(&apos;MovieAPIAPP&apos;, []);
+    app.controller(&apos;MovieAPICONTROLLER&apos;, [&apos;$scope&apos;, &apos;$http&apos;, function ($scope, $http) {
+    $scope.fetchGenres = function () {
+    $http.get(&apos;http://api.themoviedb.org/3/genre/movie/list?api_key=[my_api_key]&apos;)
+    .success(function (response) {
+    console.log(response);
+    $scope.genres = response.genres;
+    });
+    };
+    $scope.movies = [];
+    $scope.fetchTitles = function (genreId) {
+    console.log(genreId);
+    $http.get(&apos;http://api.themoviedb.org/3/genre/&apos; + genreId + &apos;/movies?api_key=[my_api_key]&amp;page_size=1&apos;)
+    .success(function (response) {
+    console.log(response);
+    $scope.movies.push.apply($scope.movies, response.results);
+    });
+    }
+    }]);
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week9/HtmlPage2.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/js/Week9/JavaScript2.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/experiments/css/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <h4>References</h4>
+    <h5>The Movie DB</h5>
+    <a href="https://www.themoviedb.org/documentation/api">The Movie DB APIs</a>
+    <hr />
+</body>
+</html>

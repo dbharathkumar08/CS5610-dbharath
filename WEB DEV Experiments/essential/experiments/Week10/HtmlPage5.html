@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>User authentication buttons</title>
+    <link href="../css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <script src="../js/Week10/JavaScript5.js"></script>
+    <link href="../css/Week10/StyleSheet3.css" type="text/css" rel="stylesheet" />
+    <script src="../js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Descrption</h2>
+    <hr />
+    <p>
+        This experiment I try the display the user registration.
+       And user authentications.
+    </p>
+    <div ng-controller="ExampleController">
+        <form name="myForm">
+            <label>
+                User name:
+                <input type="text" name="userName" ng-model="user.name" required>
+            </label>
+            <div role="alert">
+                <span class="error" ng-show="myForm.userName.$error.required">
+                    Required!
+                </span>
+            </div>
+            <label>
+                Last name:
+                <input type="text" name="lastName" ng-model="user.last"
+                       ng-minlength="3" ng-maxlength="10">
+            </label>
+            <div role="alert">
+                <span class="error" ng-show="myForm.lastName.$error.minlength">
+                    Too short!
+                </span>
+                <span class="error" ng-show="myForm.lastName.$error.maxlength">
+                    Too long!
+                </span>
+            </div>
+        </form>
+        <hr>
+        <tt>user = {{user}}</tt><br />
+        <tt>myForm.userName.$valid = {{myForm.userName.$valid}}</tt><br />
+        <tt>myForm.userName.$error = {{myForm.userName.$error}}</tt><br />
+        <tt>myForm.lastName.$valid = {{myForm.lastName.$valid}}</tt><br />
+        <tt>myForm.lastName.$error = {{myForm.lastName.$error}}</tt><br />
+        <tt>myForm.$valid = {{myForm.$valid}}</tt><br />
+        <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br />
+        <tt>myForm.$error.minlength = {{!!myForm.$error.minlength}}</tt><br />
+        <tt>myForm.$error.maxlength = {{!!myForm.$error.maxlength}}</tt><br />
+    </div>
+    <h4>Code Snippet</h4>
+    <pre>
+                               &lt;div ng-controller=&quot;ExampleController&quot;&gt;
+        &lt;form name=&quot;myForm&quot;&gt;
+            &lt;label&gt;
+                User name:
+                &lt;input type=&quot;text&quot; name=&quot;userName&quot; ng-model=&quot;user.name&quot; required&gt;
+            &lt;/label&gt;
+            &lt;div role=&quot;alert&quot;&gt;
+                &lt;span class=&quot;error&quot; ng-show=&quot;myForm.userName.$error.required&quot;&gt;
+                    Required!
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;label&gt;
+                Last name:
+                &lt;input type=&quot;text&quot; name=&quot;lastName&quot; ng-model=&quot;user.last&quot;
+                       ng-minlength=&quot;3&quot; ng-maxlength=&quot;10&quot;&gt;
+            &lt;/label&gt;
+            &lt;div role=&quot;alert&quot;&gt;
+                &lt;span class=&quot;error&quot; ng-show=&quot;myForm.lastName.$error.minlength&quot;&gt;
+                    Too short!
+                &lt;/span&gt;
+                &lt;span class=&quot;error&quot; ng-show=&quot;myForm.lastName.$error.maxlength&quot;&gt;
+                    Too long!
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;hr&gt;
+        &lt;tt&gt;user = {{user}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.userName.$valid = {{myForm.userName.$valid}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.userName.$error = {{myForm.userName.$error}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.lastName.$valid = {{myForm.lastName.$valid}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.lastName.$error = {{myForm.lastName.$error}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.$valid = {{myForm.$valid}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.$error.required = {{!!myForm.$error.required}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.$error.minlength = {{!!myForm.$error.minlength}}&lt;/tt&gt;&lt;br /&gt;
+        &lt;tt&gt;myForm.$error.maxlength = {{!!myForm.$error.maxlength}}&lt;/tt&gt;&lt;br /&gt;
+         </pre>
+
+
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week10/HtmlPage5.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/css/Week10/StyleSheet3.css" target="_blank">CSS</a>
+    <hr />
+
+    <h4>References</h4>
+    <h5>Bootstrap</h5>
+    <a href="http://getbootstrap.com/">Bootstrap</a>
+    <hr />
+</body>
+</html>

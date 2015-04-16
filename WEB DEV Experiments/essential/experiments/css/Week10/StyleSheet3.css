@@ -1,0 +1,42 @@
+﻿.body{
+    color:darkgray;
+}
+
+   .registerAction {
+        padding : 5px;
+        width : 32%;
+    }
+    .formButtons {
+        padding-top : 12px;
+    }
+    
+    .registerForm{
+        background-color: lightgreen;
+        border: 10px solid brown;
+        width : 50%;
+        float : left;
+        padding : 20px;
+    }
+    .errorMessageDiv{
+        width : 100%;
+    }
+    .errormsg {
+        text-align : right;
+        color : red;
+    }
+    .captchaImg {
+        height : 100px;
+        width : 100%;
+        border : 1px solid darkgray;
+    }
+
+    .form-control {
+        padding : 5px;
+    }
+    #registerhead{
+        color: red;
+        text-size-adjust:100%
+    }
+    
+
+    

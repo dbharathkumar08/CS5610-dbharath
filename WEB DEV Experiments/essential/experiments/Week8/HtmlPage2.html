@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>NODEJS Experiments</title>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body>
+
+    <h2>Below is the link for the experiment in openshift</h2>
+    <a href="http://ide-dayanandab.rhcloud.com/nodejs/Profile_Login.html">Experiment 1</a>
+
+    <h3>Description</h3>
+    <p>
+        NODE JS is used to Validate a user about his login credentials 
+        Valid Credentials:
+        username:bharath@neu.edu password: bharath
+        username:admin@neu.edu password :admin
+    </p>
+
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+                var app = angular.module(&quot;CourseApp&quot;, [&quot;ngRoute&quot;]);
+app.config([&apos;$routeProvider&apos;,
+  function ($routeProvider) {
+      $routeProvider.
+        when(&apos;/home&apos;, {
+            templateUrl: &apos;profileManager/home.html&apos;
+        }).
+      
+        otherwise({
+            redirectTo: &apos;/home&apos;
+        });
+  }]);
+app.controller(&quot;loginController&quot;, function ($scope, loginService, $location) {
+    $scope.currentUser = null;
+    $scope.color = &quot;btn btn-success&quot;;
+    $scope.clear = function () {
+        $scope.username = &apos;&apos;;
+    }
+    $scope.psclear = function () {
+        $scope.password = &apos;&apos;;
+    }
+    $scope.login = function () {
+        loginService.login($scope.user, callback);
+    }
+    function callback() {
+        $scope.currentUser = loginService.getCurrentUser();
+        if ($scope.currentUser)
+            $scope.color = &quot;btn btn-success&quot;;
+        else
+            $scope.color = &quot;btn btn-danger&quot;;
+    }
+    $scope.logout = function () {
+        $scope.currentUser = null;
+        $scope.user.username = null;
+        $scope.user.password = null;
+        var res = loginService.logout();
+        $location.path(&apos;profileManager/home.html&apos;);
+    }
+});
+app.factory(&quot;loginService&quot;, function ($http) {
+    var currentUser = null;
+    var login = function (user, callback) {
+        $http.post(&apos;/login&apos;, user)
+        .success(function (response) {
+            currentUser = response;
+            callback();
+        });
+    }
+    var getCurrentUser = function () {
+        return currentUser;
+    }
+    var logout = function () {
+        currentUser = null;
+    }
+    return {
+        login: login,
+        getCurrentUser: getCurrentUser,
+        logout: logout
+    }
+});
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/ide/public/nodejs/Profile_Login.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/ide/public/js/Login_Client.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/experiments/ide/public/css/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+    <hr />
+
+    <h4>References</h4>
+    <h5>Jose Class Lecture</h5>
+    <hr />
+
+</body>
+</html>

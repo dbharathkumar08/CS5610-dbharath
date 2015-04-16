@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>   
+    <title>Profile_Login</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/StyleSheet.css" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/Week9/JavaScript.js"></script>
+</head>
+<body class="container" ng-app="MovieAPIAPP">
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Descrption</h2>
+    <hr />
+    <p>
+        This experiment involves usage of APIs that is used by my project inorder to fetch data .
+        Here I fetch all the categories that can be fetched from the WEB API.
+    </p>
+
+    <h2>Experiment Demo</h2>
+    <hr />
+
+    <div ng-controller="MovieAPICONTROLLER">
+        <button class="btn btn-success" ng-click="fetchGenres()"> Movie Categories </button>
+        <table class="table table-striped">
+            <tbody>
+                <tr ng-repeat="genre in genres">
+                    <td>{{genre.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+               var app = angular.module(&apos;MovieAPIAPP&apos;, []);
+app.controller(&apos;MovieAPICONTROLLER&apos;, [&apos;$scope&apos;, &apos;$http&apos;, function ($scope, $http) {
+    
+  $scope.fetchGenres = function () {
+    
+      $http.get(&apos;http://api.themoviedb.org/3/genre/movie/list?api_key=[my_api_key]&apos;)
+      .success(function (response) {
+        $scope.genres = response.genres;
+        console.log(response);
+      });
+  }
+}]);
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week9/HtmlPage.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/js/Week9/JavaScript.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/experiments/css/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+
+    <h4>References</h4>
+    <h5>The Movie DB</h5>
+    <a href="https://www.themoviedb.org/documentation/api">The Movie DB APIs</a>
+    <hr />
+
+</body>
+</html>

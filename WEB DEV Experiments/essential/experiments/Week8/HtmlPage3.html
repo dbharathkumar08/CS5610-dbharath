@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>NODEJS Experiments</title>
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+</head>
+<body>
+
+    <h2>Below is the link for the experiment in openshift</h2>
+    <a href="http://ide-dayanandab.rhcloud.com/nodejs/UserProfile_Edit.html">Experiment 2</a>
+
+    <h3>Description</h3>
+    <p>
+        NODE JS is used login and access different fields of the userin a way to modify it.
+        username:bharath@neu.edu password: bharath
+        username:admin@neu.edu password :admin
+    </p>
+
+    <hr />
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+                var app = angular.module(&quot;CourseApp&quot;, [&quot;ngRoute&quot;]);
+app.config([&apos;$routeProvider&apos;,
+  function ($routeProvider) {
+      $routeProvider.
+        when(&apos;/home&apos;, {
+            templateUrl: &apos;profileManager/home.html&apos;
+        }).
+       
+       when(&apos;/profile&apos;, {
+           templateUrl: &apos;profileManager/profile_edit.html&apos;,
+           controller: &apos;ProfileController&apos;
+       }).
+        otherwise({
+            redirectTo: &apos;/home&apos;
+        });
+  }]);
+app.controller(&quot;loginController&quot;, function ($scope, loginService, $location) {
+    $scope.currentUser = null;
+    $scope.color = &quot;btn btn-success&quot;;
+    $scope.clear = function () {
+        $scope.user.username = &apos;&apos;;
+    }
+    $scope.psclear = function () {
+        $scope.user.password = &apos;&apos;;
+    }
+    $scope.login = function () {
+        loginService.login($scope.user, callback);
+    }
+    function callback() {
+        $scope.currentUser = loginService.getCurrentUser();
+        if ($scope.currentUser)
+            $scope.color = &quot;btn btn-success&quot;;
+        else
+            $scope.color = &quot;btn btn-danger&quot;;
+    }
+    $scope.logout = function () {
+        $scope.currentUser = null;
+        $scope.user.username = null;
+        $scope.user.password = null;
+        var res = loginService.logout();
+        $location.path(&apos;courseApp/home.html&apos;);
+    }
+});
+app.factory(&quot;loginService&quot;, function ($http) {
+    var currentUser = null;
+    var login = function (user, callback) {
+        $http.post(&apos;/login&apos;, user)
+        .success(function (response) {
+            currentUser = response;
+            callback();
+        });
+    }
+    var updateCurrentUser = function (password, email, firstName, lastName) {
+        currentUser.password = password;
+        currentUser.email = email;
+        currentUser.firstName = firstName;
+        currentUser.lastName = lastName;
+        $http.post(&apos;/update&apos;, currentUser)
+        .success(function (response) {
+            currentUser = response;
+        });
+    }
+    var getCurrentUser = function () {
+        return currentUser;
+    }
+    var logout = function () {
+        currentUser = null;
+    }
+    return {
+        login: login,
+        getCurrentUser: getCurrentUser,
+        logout: logout,
+        updateCurrentUser: updateCurrentUser
+    }
+});
+app.controller(&quot;ProfileController&quot;, function ($scope, loginService, $routeParams) {
+    var username = $routeParams.username;
+    $scope.username = username;
+    var currentUser = loginService.getCurrentUser();
+    $scope.user.new_fn = currentUser.firstName;
+    $scope.user.new_ln = currentUser.lastName;
+    $scope.user.new_mail = currentUser.email;
+    $scope.user.new_pwd = currentUser.password;
+    $scope.user.re_pwd = currentUser.password;
+    $scope.mismatch = false;
+    $scope.save = false;
+    $scope.saveChanges = function () {
+        var password = $scope.user.new_pwd;
+        var repassword = $scope.user.re_pwd;
+        var email = $scope.user.new_mail;
+        var firstName = $scope.user.new_fn;
+        var lastName = $scope.user.new_ln;
+        if (password != repassword) {
+            $scope.mismatch = true;
+            $scope.save = false;
+        } else {
+            $scope.mismatch = false;
+            $scope.save = true;
+            loginService.updateCurrentUser(password, email, firstName, lastName);
+        }
+    }
+});
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/ide/public/nodejs/UserProfile_Edit.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/ide/public/js/Edit_Profile.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/experiments/ide/public/css/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+    <hr />
+
+    <h4>References</h4>
+    <h5>Jose Class Lecture</h5>
+    <hr />
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Movie Database</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/Week9/StyleSheet5.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/Week9/JavaScript5.js"></script>
+</head>
+<body class="container" ng-app="APIApp">
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Descrption</h2>
+    <hr />
+    <p>
+        This experiment involves usage of APIs that is used by my project inorder to fetch data .
+        Here I fetch all the categories that can be fetched from the WEB API.
+        I try to fetch all the movies in a particular genre and display its POSTER upon the click. and also the movie details.
+        The display is ina broad spectrum.
+        When the poster is clicked, Youtube video is also played.
+    </p>
+
+
+
+    <h2>Experiment Demo</h2>
+    <hr />
+
+    <div ng-controller="APICtrl">
+
+        <div class="row" ng-repeat="genre in genres">
+            <div class="row">
+                <button class="btn subtitle" ng-click="fetchTitles(genre.id)">{{genre.name}}</button>
+            </div>
+            <div class="row">
+                <div class="col-md-2" ng-show="movieInfoByGenreId[genre.id]" ng-repeat="movie in movieInfoByGenreId[genre.id]">
+                    <div class="topimage" hover-bg-image=" .. />../images/siteimages/play.png">
+                    <a ng-href="http://youtube.com/watch?v={{movie.trailerKey}}" target="_blank">
+                        <img class="poster" ng-src="{{ movie.posterUrl }}" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+     app.directive(&apos;hoverBgImage&apos;, function () {
+    return {
+        link: function (scope, elm, attrs) {
+            elm.bind(&apos;mouseenter&apos;, function () {
+                this.style.backgroundImage = &apos;url(&apos; + attrs.hoverBgImage + &apos;)&apos;;
+            });
+            elm.bind(&apos;mouseleave&apos;, function () {
+                this.style.backgroundImage = &apos;&apos;;
+            })
+        }
+    };
+});
+</pre>
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week9/HtmlPage5.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/js/Week9/JavaScript5.js" target="_blank">Angular JS</a>
+    <hr/>
+
+    <h4>References</h4>
+    <h5>The Movie DB</h5>
+    <a href="https://www.themoviedb.org/documentation/api">The Movie DB APIs</a>
+    <hr />
+
+</body>
+</html>

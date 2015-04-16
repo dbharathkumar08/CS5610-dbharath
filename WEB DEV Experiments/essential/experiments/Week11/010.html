@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Movie Library</title>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/Week11/MoviesApp.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet2.css" />
+</head>
+<body ng-app="MoviesApp">
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Descrption</h2>
+    <hr />
+    <p>
+        This experiment involves the usage data in angular to display in the HTML
+    </p>
+
+    <h2>Experiment Demo</h2>
+    <hr />
+    <div ng-controller="MovieController" class="container">
+        <h1>Simple Movie Library</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Rating</th>
+                    <th>Plot</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th><input ng-model="movie.title" class="form-control"/></th>
+                    <th><input ng-model="movie.year" class="form-control" /></th>
+                    <th><input ng-model="movie.rating" class="form-control" /></th>
+                    <th><input ng-model="movie.plot" class="form-control" /></th>
+                    <th>
+                        <button ng-click="updateMovie()" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button ng-click="addMovie()" class="btn btn-success">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="movie in movies">
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>{{movie.plot}}</td>
+                    <td>
+                        <button ng-click="selectMovie(movie)" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button ng-click="removeMovie(movie)" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+                      $scope.addMovie = function()
+    {
+        var newMovie = {
+            title: $scope.movie.title,
+            rating: $scope.movie.rating,
+            year: $scope.movie.year,
+            plot: $scope.movie.plot
+        };
+        $scope.movies.push(newMovie);
+    }
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week11/010.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/js/Week11/MoviesApp.js" target="_blank">Angular JS</a>
+
+    <h4>References</h4>
+    <h5>Professor Jose Class</h5>
+    <hr />
+
+</body>
+</html>

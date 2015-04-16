@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Movie Library</title>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/Week5/JavaScript2.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/Week11/StyleSheet020.css" /> 
+</head>
+<body ng-app="MoviesApp">
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Description</h2>
+    <hr />
+    <p>
+        These experiments I implement in my project.
+        Through the web APIS I am able to fetch the Top Rental movies
+    </p>
+    <div ng-controller="MovieController" class="container">
+        <h1>Simple Movie Library</h1>
+
+
+        <span class="input-group-btn">
+            <button ng-click="searchMovies()" class="btn btn-primary" type="button">GET TOP RENTALS MOVIES</button>
+        </span>
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>TITLE</td>
+                    <td>YEAR</td>
+                    <td>RATING</td>
+                    <td>CRITICS SCORE</td>
+                    <td>AUDIENCE SCORE</td>
+                    <td>SYNOPSIS</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="movie in movies">
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.mpaa_rating}}</td>
+                    <td>{{movie.ratings.critics_score}}</td>
+                    <td>{{movie.ratings.audience_score}}</td>
+                    <td>
+
+                        <textarea rows="10" cols="30">{{movie.synopsis}}</textarea>
+                    </td>
+                    <td>
+
+                        <button ng-click="removeMovie(movie)" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+                                        $scope.searchMovies = function () {
+        $http.jsonp("http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=m8r83jtnrvy92y4w5hxm39cb&callback=JSON_CALLBACK")
+        .success(function (response) {
+            console.log(response);
+            $scope.movies = response.movies;
+        })
+    }
+
+</pre>
+    <hr />
+
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week5/HtmlPage2.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/js/Week5/JavaScript2.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/experiments/css/Week11/StyleSheet020.css" target="_blank">View CSS</a>
+
+    <h4>References</h4>
+    <a href="http://developer.rottentomatoes.com/docs">Rotten Tomatoes Web APIS</a>
+    <hr />
+</body>
+</html>

@@ -1,0 +1,122 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Registration </title>
+    <link href="../css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="../css/Week10/StyleSheet3.css" type="text/css" rel="stylesheet" />
+    <script src="../js/jquery-1.11.2.min.js"></script>
+  
+
+ 
+
+</head>
+<body>
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Descrption</h2>
+    <hr />
+    <p>
+        This experiment I try the display the user registration.
+        I have used bootstrap in order to display uniformly
+    </p>
+
+
+
+    <h2>Experiment Demo</h2>
+    <div class="container mainDiv">
+        <h1 id="registerhead">REGISTRATION FORM</h1>
+        <div class="registerForm">
+            <div class="errorMessageDiv"><p class="errormsg"></p></div>
+
+            <label>User Name :</label>
+            <input type="text" class="form-control username" placeholder="User name" />
+            <label>Password :</label>
+            <input type="password" class="form-control password1" placeholder="Password" />
+            <input type="password" class="form-control password2" placeholder="Confirm Password" />
+            <label>FIRST NAME:</label>
+            <input type="text" class="form-control firstName" placeholder="First Name" />
+            <label>LAST NAME:</label>
+            <input type="text" class="form-control lastName" placeholder="Last Name" />
+            <label>Email :</label>
+            <input type="email" class="form-control email" placeholder="Email" />
+            <label>Gender :</label>
+            <select class="form-control gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+            <label>Address :</label>
+            <textarea name="address" class="form-control address" placeholder="address" rows="10" cols="30"></textarea>
+            <label>Occupation :</label>
+            <select class="form-control roles">
+                <option>Public</option>
+                <option>Private</option>
+                <option>NGO</option>
+                <option>Student</option>
+            </select>          
+            <label>Verify the captcha</label>
+            <div class="captcha">
+                <img src="" class="captchaImg" />
+                <input type="text" class="form-control captchaValue" placeholder="Text from Image" />
+            </div>
+            <div class="formButtons">
+                <input type="button" class="btn btn-primary registerAction createAccount" value="Create Account" />
+                <input type="button" class="btn btn-warning registerAction resetFields" value="Reset" />
+                <a href="../index.html" class="btn btn-danger registerAction">Cancel</a>
+            </div>
+
+        </div>
+    </div>
+    <h4>Code Snippet</h4>
+    <pre>
+                         &lt;div class=&quot;registerForm&quot;&gt;
+            &lt;div class=&quot;errorMessageDiv&quot;&gt;&lt;p class=&quot;errormsg&quot;&gt;&lt;/p&gt;&lt;/div&gt;
+            &lt;label&gt;User Name :&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control username&quot; placeholder=&quot;User name&quot; /&gt;
+            &lt;label&gt;Password :&lt;/label&gt;
+            &lt;input type=&quot;password&quot; class=&quot;form-control password1&quot; placeholder=&quot;Password&quot; /&gt;
+            &lt;input type=&quot;password&quot; class=&quot;form-control password2&quot; placeholder=&quot;Confirm Password&quot; /&gt;
+            &lt;label&gt;FIRST NAME:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control firstName&quot; placeholder=&quot;First Name&quot; /&gt;
+            &lt;label&gt;LAST NAME:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control lastName&quot; placeholder=&quot;Last Name&quot; /&gt;
+            &lt;label&gt;Email :&lt;/label&gt;
+            &lt;input type=&quot;email&quot; class=&quot;form-control email&quot; placeholder=&quot;Email&quot; /&gt;
+            &lt;label&gt;Gender :&lt;/label&gt;
+            &lt;select class=&quot;form-control gender&quot;&gt;
+                &lt;option&gt;Male&lt;/option&gt;
+                &lt;option&gt;Female&lt;/option&gt;
+                &lt;option&gt;Other&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;label&gt;Address :&lt;/label&gt;
+            &lt;textarea name=&quot;address&quot; class=&quot;form-control address&quot; placeholder=&quot;address&quot; rows=&quot;10&quot; cols=&quot;30&quot;&gt;&lt;/textarea&gt;
+            &lt;label&gt;Occupation :&lt;/label&gt;
+            &lt;select class=&quot;form-control roles&quot;&gt;
+                &lt;option&gt;Public&lt;/option&gt;
+                &lt;option&gt;Private&lt;/option&gt;
+                &lt;option&gt;NGO&lt;/option&gt;
+                &lt;option&gt;Student&lt;/option&gt;
+            &lt;/select&gt;          
+            &lt;label&gt;Verify the captcha&lt;/label&gt;
+            &lt;div class=&quot;captcha&quot;&gt;
+                &lt;img src=&quot;&quot; class=&quot;captchaImg&quot; /&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control captchaValue&quot; placeholder=&quot;Text from Image&quot; /&gt;
+            &lt;/div&gt;
+         </pre>
+
+    
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week10/HtmlPage3.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/css/Week10/StyleSheet3.css" target="_blank">CSS</a>
+    <hr />
+
+    <h4>References</h4>
+    <h5>Bootstrap</h5>
+    <a href="http://getbootstrap.com/">Bootstrap</a>
+    <hr />
+
+</body>
+</html>

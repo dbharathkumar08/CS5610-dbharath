@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Movie Database</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/Week9/StyleSheet3.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/Week4/StyleSheet.css" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/Week9/JavaScript3.js"></script>
+</head>
+<body class="container" ng-app="APIApp">
+    <h1>Movie Database</h1>
+    <hr />
+
+    <h2>Descrption</h2>
+    <hr />
+    <p>
+        This experiment involves usage of APIs that is used by my project inorder to fetch data .
+        Here I fetch all the categories that can be fetched from the WEB API.
+        I try to fetch all the movies in a particular genre and display  its POSTER upon the click.
+    </p>
+
+
+
+    <h2>Experiment Demo</h2>
+    <hr />
+    <div ng-controller="APICtrl">
+        <div class="row" ng-repeat="genre in genres">
+            <div class="row">
+                <button class="btn subtitle" ng-click="fetchTitles(genre.id)">{{genre.name}}</button>
+            </div>
+            <div class="row">
+                <div class="col-md-1 borderedbox" ng-show="moviesByGenreId[genre.id]" ng-repeat="movie in moviesByGenreId[genre.id]">
+                    <a ng-click="fetchMovieInfo(movie.id); toggleModal()">{{movie.original_title}}</a>
+                </div>
+            </div>
+        </div>
+        <modal-dialog show="modalShown">
+            <div>
+                <img class="poster" ng-src="{{ poster }}" />
+                <h3></h3><h4>{{ overview }}</h4>
+
+            </div>
+        </modal-dialog>
+    </div>
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+            $scope.moviesByGenreId = {};
+  $scope.fetchTitles = function (genreId) {
+    console.log(genreId);
+      $http.get(&apos;http://api.themoviedb.org/3/genre/&apos; + genreId + &apos;/movies?api_key=9d0dd3bf6b5d957142fe31486e1c2c94&amp;page_size=1&apos;)
+      .success(function (response) {
+        console.log(response);
+        $scope.moviesByGenreId[genreId] = response.results;
+      });
+  }
+  $scope.fetchMovieInfo = function (id) {
+      $http.get(&apos;http://api.themoviedb.org/3/movie/&apos; + id + &apos;?api_key=9d0dd3bf6b5d957142fe31486e1c2c94&apos;)
+      .success(function (response) {
+        console.log(response);
+        $scope.overview = response.overview;
+        $scope.poster = &apos;http://image.tmdb.org/t/p/w500/&apos; + response.poster_path + &apos;?api_key=9d0dd3bf6b5d957142fe31486e1c2c94&apos;;
+    });
+  }
+  $scope.modalShown = false;
+  $scope.toggleModal = function () {
+    $scope.modalShown = !$scope.modalShown;
+  }
+</pre>
+    <hr />
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week9/HtmlPage3.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/js/Week9/JavaScript3.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/experiments/css/Week9/StyleSheet3.css" target="_blank">
+        View CSS
+    </a>
+
+    <h4>References</h4>
+    <h5>The Movie DB</h5>
+    <a href="https://www.themoviedb.org/documentation/api">The Movie DB APIs</a>
+    <hr />
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Movie Library</title>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/Week5/JavaScript5.js"></script>
+    <link href="../../css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/Week11/StyleSheet020.css" /> 
+</head>
+<body ng-app="MoviesApp">
+    <h1>User Database</h1>
+    <hr />
+
+    <h2>Description</h2>
+    <hr />
+    <p>
+        These experiments I implement in my project.
+        It corresponds to the listing of users, and the way they can interact with other users.
+    </p>
+    <div ng-controller="MovieController" class="container">
+
+        <h1>Users</h1>
+        <h2>User List</h2>
+        <div class="table-responsive">            
+
+            <table class=" table table-hover">
+                <tr>
+                    <td>USERID</td>
+                    <td>USERINAME</td>
+                    <td>FIRSTNAME</td>
+                    <td>LASTNAME</td>
+                    <td>EMAIL</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr ng-repeat="user in users">
+                    <td>{{user._id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.firstname}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.email}}</td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="usercommunicate(currentUser,user)">COMMUNICATE WITH THE USER</button>
+                    </td>
+                    <td>
+                        <textarea ng-model="msg" name="address" class="form-control address" placeholder="messages" rows="5" cols="20"></textarea>
+
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+
+    <h4>Code Snippet</h4>
+    <p>Code Below is the angular JS code that acts as a controller</p>
+    <pre>
+                      &lt;tr ng-repeat=&quot;user in users&quot;&gt;
+                    &lt;td&gt;{{user._id}}&lt;/td&gt;
+                    &lt;td&gt;{{user.username}}&lt;/td&gt;
+                    &lt;td&gt;{{user.firstname}}&lt;/td&gt;
+                    &lt;td&gt;{{user.lastname}}&lt;/td&gt;
+                    &lt;td&gt;{{user.email}}&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;usercommunicate(currentUser,user)&quot;&gt;COMMUNICATE WITH THE USER&lt;/button&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;textarea ng-model=&quot;msg&quot; name=&quot;address&quot; class=&quot;form-control address&quot; placeholder=&quot;messages&quot; rows=&quot;5&quot; cols=&quot;20&quot;&gt;&lt;/textarea&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+</pre>
+    <hr />
+
+    <h4>Source Code </h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week5/HtmlPage5.html" target="_blank">View Source</a>
+    <a href="../../fileview/Default.aspx?~/experiments/js/Week5/JavaScript5.js" target="_blank">Angular JS</a>
+    <a href="../../fileview/Default.aspx?~/experiments/css/Week11/StyleSheet020.css" target="_blank">View CSS</a>
+
+    <h4>References</h4>
+    <h5>Jose Class</h5>
+    <hr />
+</body>
+</html>
