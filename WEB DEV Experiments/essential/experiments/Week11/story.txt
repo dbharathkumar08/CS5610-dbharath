@@ -1,6 +1,6 @@
 ﻿../../story/whatisnext.htm?../experiments/Week11/story.txt		       What is Next?								                      
-HtmlPage.html                                                                   Experiment-1                                                   
-HtmlPage2.html									Experiment-2
-HtmlPage3.html									Experiment-3
-HtmlPage4.html									Experiment-4
-HtmlPage5.html                                                                  Experiment-5
+010.html                                                                   Experiment-1                                                   
+020.html									Experiment-2
+030.html									Experiment-3
+040.html									Experiment-4
+050.html                                                                  Experiment-5
