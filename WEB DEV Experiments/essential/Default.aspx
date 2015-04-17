@@ -15,7 +15,8 @@
     
     
     <link rel="stylesheet" href="css/HomePage.css">
-
+
+
 </head>
 <body>
 <div id="header">
@@ -24,7 +25,8 @@
     </div>
 </div>
 
-<div id="links">
+<div id="links">
+
 
 <ul class="master_navigation">
     <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
@@ -74,7 +76,8 @@
     <div class="footer">
 © 2015 Bharath kumar Dayananda - CS5610 Web Development course. All rights reserved.</div>
 
-
+
+
 
 </body>
 </html>
