@@ -47,9 +47,9 @@
 <div class="content">
     <div class="first_column fl">
         <div class="image"><img class="profile" src="images/bharath.jpg"></div>
-        <div class="personal_info">
-            <div class="contact_info h_divider">
-                <p id="detail">M.S. in Computer Science<br/>
+        <div class="user_info">
+            <div class="detail_info h_divider">
+                <p id="course">M.S. in Computer Science<br/>
                     Northeastern University, Boston<br/>
                     dbharath@ccs.neu.edu<br/>
                     (+1)6692258733
@@ -62,16 +62,44 @@
         <p id="content">   I am a Northeastern Student pursuing MS in Computer Science.
     This is my project website for Web Development course.
         </p>
-       
+
+          <div id="second_sub1_id" class="secondsubcolumn-1">
+                       <a href="#">
+                           <div class="anchorLinkDivs">
+                               <img class="anchorLinkGif" src="images/project_icon.jpg"/>
+                               
+                           </div>
+                       </a>
+        </div>    
+        <div id="second_sub2_id" class="secondsubcolumn-2">
+                       <a href="#">
+                           <div class="anchorLinkDivs">
+                               <img class="anchorLinkGif" src="images/project_doc_icon.jpg"/>
+                               
+                           </div>
+                       </a>
+        </div>  
     </div>
-    <div class="third_column fl vl_divider h_divider">
-        <div class="heading">Project Information:  </div>
-        <div class="project_links h_divider">           
-            <div class="project"><a href="https://github.com/dbharathkumar08/CS5610-dbharath" target="_blank"><p>GitHub Source Code</p></a></div>
-            <div class="project"><a href="#" target="_blank"><p>Project</p></a></div>
-            <div class="project_doc"><a href="#" target="_blank"><p>Project Documentation</p></a></div>
-        </div>
-    </div>  
+    <div class="third_column fl vl_divider">
+       
+
+          <div id="third_sub1_id" class="thirdsubcolumn-1">
+                       <a href="story/index.htm?../experiments/story.txt" target="_blank">
+                           <div class="anchorLinkDivs">
+                               <img class="anchorLinkGif" src="images/experiment_icon.jpg"/>
+                               
+                           </div>
+                       </a>
+        </div>    
+        <div id="third_sub2_id" class="secondsubcolumn-2">
+                       <a href="https://github.com/dbharathkumar08/CS5610-dbharath" target="_blank">
+                           <div class="anchorLinkDivs">
+                               <img class="anchorLinkGif" src="images/source_code_icon.jpg"/>
+                               
+                           </div>
+                       </a>
+        </div>  
+    </div>
 </div>
     <div class="footer">
 © 2015 Bharath kumar Dayananda - CS5610 Web Development course. All rights reserved.</div>
