@@ -1,0 +1,24 @@
+
+
+
+
+
+<div class="modal-header">
+    <h2 class="modal-title">Login</h2>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" ng-model="user.username" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" ng-model="user.password" required>
+        </div>
+        <div class="modal-footer">
+            {{message}}
+            <button type="submit" class="{{color}}" ng-click="login(user)">Login</button>
+        </div>
+    </form>
+</div>

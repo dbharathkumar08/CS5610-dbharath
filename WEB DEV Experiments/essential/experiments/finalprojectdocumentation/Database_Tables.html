@@ -1,0 +1,159 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>datsorage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="jumbotron">
+        <center>
+            <h1>Data Storage - MongoDB</h1>
+        </center>
+    </div>
+    <div class="container">
+        <p>
+            Besides data provided from APIs we have to maintain user data locally,so for backend storage purpose I am using MongoDB which is a no SQL database.
+            In mongoDB there are collections instead of tables and documents (JSON Objects) instead of tupples.
+            <br />
+            The Coolections for my project are :
+        </p>
+        <ul>
+            <li>UserModel : usermodels</li>
+            <table class="table table-condensed">
+                <tr>
+                    <th>
+                        Field
+                    </th>
+                    <th>Type</th>
+                    <th>Usage</th>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td>String</td>
+                    <td>user's unique username</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td>String</td>
+                    <td>User's password</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>User's mail id</td>
+                </tr>
+                <tr>
+                    <td>Followerusers</td>
+                    <td>Array</td>
+                    <td>Username of those whom the user follows</td>
+                </tr>
+                <tr>
+                    <td>Followingusers</td>
+                    <td>Array</td>
+                    <td>User name of those who follow the user</td>
+                </tr>
+                <tr>
+                    <td>userfavmovies</td>
+                    <td>Array</td>
+                    <td>IMDB id of the movies which the user has made fav</td>
+                </tr>
+                <tr>
+                    <td>firstName</td>
+                    <td>String</td>
+                    <td>User's first name</td>
+                </tr>
+                <tr>
+                    <td>lastName</td>
+                    <td>String</td>
+                    <td>User's last name</td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td>String</td>
+                    <td>User's address</td>
+                </tr>
+            </table>
+            <li>MovieModel: moviemodels</li>
+            <table class="table table-condensed">
+                <tr>
+                    <th>
+                        Field
+                    </th>
+                    <th>Type</th>
+                    <th>Usage</th>
+                </tr>
+                <tr>
+                    <td>idIMDB</td>
+                    <td>String</td>
+                    <td>IMDB id of the movie for which review is done</td>
+                </tr>
+                <tr>
+                    <td>plot</td>
+                    <td>String</td>
+                    <td>Plot of the Movie</td>
+                </tr>
+                <tr>
+                    <td>rating</td>
+                    <td>String</td>
+                    <td>The rating of the movie given by critics</td>
+                </tr>
+                <tr>
+                    <td>title</td>
+                    <td>String</td>
+                    <td>Movie title</td>
+                </tr>
+                <tr>
+                    <td>year</td>
+                    <td>String</td>
+                    <td>The year the movie was released</td>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td>Array</td>
+                    <td>List of users who have this movie as their favorite</td>
+                </tr>
+
+            </table>
+            <li>ReviewModel: reviewmodels</li>
+            <table class="table table-condensed">
+                <tr>
+                    <th>
+                        Field
+                    </th>
+                    <th>Type</th>
+                    <th>Usage</th>
+                </tr>
+                <tr>
+                    <td>idIMDB</td>
+                    <td>String</td>
+                    <td>IMDB id of the movie for which review is done</td>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td>String</td>
+                    <td>Unique username</td>
+                </tr>
+                <tr>
+                    <td>title</td>
+                    <td>String</td>
+                    <td>Title of the movie</td>
+                </tr>
+                <tr>
+                    <td>rating</td>
+                    <td>String</td>
+                    <td>rating given to movie by user</td>
+                </tr>
+                <tr>
+                    <td>comment</td>
+                    <td>String</td>
+                    <td>comment made on movie by user</td>
+                </tr>
+
+            </table>
+            
+        </ul>
+    </div>
+
+</body>
+</html>

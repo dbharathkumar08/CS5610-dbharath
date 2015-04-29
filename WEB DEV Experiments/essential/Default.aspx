@@ -64,7 +64,7 @@
         </p>
 
           <div id="second_sub1_id" class="secondsubcolumn-1">
-                       <a href="#">
+                       <a href="http://finalproject-dayanandab.rhcloud.com/#/home">
                            <div class="anchorLinkDivs">
                                <img class="anchorLinkGif" src="images/project_icon.jpg"/>
                                
@@ -72,7 +72,7 @@
                        </a>
         </div>    
         <div id="second_sub2_id" class="secondsubcolumn-2">
-                       <a href="#">
+                       <a href="story/index.htm?../experiments/finalprojectdocumentation/story.txt">
                            <div class="anchorLinkDivs">
                                <img class="anchorLinkGif" src="images/project_doc_icon.jpg"/>
                                

@@ -1,0 +1,57 @@
+﻿body {
+    background-image:url(../images/Index_background_lt.jpg);
+}
+
+.top-padding{
+    float: left;
+     margin-top: 135px; 
+}
+.profilecolor{
+    color:#00ffff;
+}
+.welcomecolor{
+    color:#f310cc;
+}
+.detailscolor{
+    color:#229853;
+}
+.likecolor{
+    color:#fa210b;
+}
+.Favmoviecolor{
+    color:#dc1e47;
+}
+.tablecolor{
+    background-color:grey;
+}
+.tablecolor1{
+    background-color:#6abec7;
+}
+.tablecolor2{
+    background-color:#ffd800;
+}
+.tablecolor3{
+    background-color:#3bd516;
+}
+.tablecolor4{
+    background-color:#d76981;
+}
+.reviewcolor{
+    color:#f310cc;
+}
+.brand_name{
+    font:bold 30px arial;
+    color:floralwhite;
+}
+.align{
+    text-align:justify;
+    color:#088a46;
+    font: bold 30px arial;
+}
+.moviedetails2{
+    background-color:#cf506c;
+}
+.aboutpage{
+    background-color:#a58585;
+    font:bold 20px arial;
+}

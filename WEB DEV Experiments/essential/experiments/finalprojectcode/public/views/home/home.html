@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Its Movie Time</title>
+</head>
+<body >
+    <div id="home" class="container">
+        
+        
+        
+        <h2 id="homecolor">Welcome {{currentUser.username}}</h2>
+        
+      
+       
+        <div class="input-group">
+            <input type="text" id="searchByTitle" class="form-control" placeholder="Search the movie" />
+            <span class="input-group-btn">
+                <a href="#/movie_description/{{movie}}">
+                    <button ng-click="searchMovies()" class="btn btn-primary" type="button">Search</button>
+                </a>
+            </span>
+        </div>
+       
+
+        
+
+    </div>
+</body>
+</html>

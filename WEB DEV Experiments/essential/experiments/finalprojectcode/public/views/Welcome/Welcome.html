@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<link href="../../css/bootstrap.css" rel="stylesheet" />
+<link href="../../css/bootstrap.min.css" rel="stylesheet" />
+<script src="../../js/jquery-1.11.2.js"></script>
+<script src="../../js/bootstrap.js"></script>
+<script src="../../js/angular.js"></script>
+<script src="../../js/angular-route.js"></script>
+<script src="../../js/app.js"></script>
+<script src="../Welcome/Welcome.js"></script>
+<script src="views/home/home.js"></script>
+<script src="views/profile/profile.js"></script>
+<script src="views/register/register.js"></script>
+<script src="views/nav/nav.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Movie Database</title>
+    <style>
+        .poster {
+            float: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Movie Library</h1>
+        <h2>Welcome Home</h2>
+        <h1>Home</h1>
+
+        <h2>Welcome {{currentUser.username}}</h2>
+        <div ng-show="details">
+            <h2>Details</h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img ng-src="{{details.urlPoster}}" />
+                </div>
+                <div class="col-sm-8">
+                    {{details.rated}}
+                    {{details.year}}
+
+                    <span>Languages:</span>
+                    <ul>
+                        <li ng-repeat="language in details.languages">{{language}}</li>
+                    </ul>
+                    Genres:
+                    <ul>
+                        <li ng-repeat="genre in details.genres">{{genre}}</li>
+                    </ul>
+
+                    <p>
+                        {{details.plot}}
+                    </p>
+                </div>
+            </div>
+            <h3>{{details.title}}</h3>
+
+        </div>
+
+        <div ng-show="favoriteMovies.length > 0">
+            <h2>Favorite Movies</h2>
+
+            <table class="table table-striped">
+                <tbody>
+                    <tr ng-repeat="movie in favoriteMovies">
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.year}}</td>
+                        <td>{{movie.rating}}</td>
+                        <td>
+                            <img class="poster" ng-src="{{movie.urlPoster}}" width="50" />
+                            {{movie.plot}}
+                        </td>
+                        <td>
+                            <button ng-click="removeFavoriteMovie(movie)" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                            <button ng-click="detailsMovie(movie)" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>Search Movies</h2>
+        <div class="input-group">
+            <input type="text" ng-model="searchByTitle" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button ng-click="searchMovies()" class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div><!-- /input-group -->
+
+        <table class="table table-striped">
+            <thead>
+                
+            </thead>
+            <tbody>
+                <tr ng-repeat="movie in movies">
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>
+                        <img class="poster" ng-src="{{movie.urlPoster}}" width="50" />
+                        {{movie.plot}}
+                    </td>
+                    <td>
+                        <button ng-click="selectMovie(movie)" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+
+                        <button ng-click="addToFavorites(movie,currentUser)" class="btn btn-info">
+                            <span class="glyphicon glyphicon-star"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <span class="input-group-btn">
+            <button ng-click="searchComingSoon()" class="btn btn-default" type="button">COMING SOON</button>
+        </span>
+        <table class="table table-striped">
+            <thead>
+
+            </thead>
+            <tbody>
+                <tr ng-repeat="movie in comingsoonmovies">
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>
+                        <img class="poster" ng-src="{{movie.urlPoster}}" width="50" />
+                        {{movie.plot}}
+                    </td>
+                    <td>
+                        <button ng-click="selectMovie(movie)" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+
+                        <button ng-click="addToFavorites(movie,currentUser)" class="btn btn-info">
+                            <span class="glyphicon glyphicon-star"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
+</body>
+</html>

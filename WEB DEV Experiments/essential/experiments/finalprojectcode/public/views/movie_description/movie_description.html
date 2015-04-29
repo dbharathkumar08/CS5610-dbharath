@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Movie Description</title>
+</head>
+<body >
+
+    <div class="top-padding">
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th></th>
+                        <th>Year</th>
+                        <th></th>
+                        <th>Rating</th>
+                        <th></th>
+                        <th>Poster</th>
+                        <th></th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="movie in movies">
+
+                        <td>
+
+
+                            <div class="col-md-4">{{movie.title}}</div>
+
+
+                        </td>
+                        <td></td>
+                        <td><div class="col-md-4">{{movie.year}}</div></td>
+                        <td></td>
+                        <td><div class="col-md-4">{{movie.rating}}</div></td>
+                        <td></td>
+                        <td>
+                            <div class="col-md-4"> <img class="poster" ng-src="{{movie.urlPoster}}" width="50" /></div>
+                        </td>
+                        <td></td>
+                        <td>
+                            <div class="pull-right">
+                                <div class="input-group">
+
+                                    <span class="input-group-btn">
+                                        <a href="#/movie_details/{{movie.idIMDB}}">
+                                            <button class="btn btn-primary" type="button">GET DETAILS</button>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    </body>
+</html>
+
+
+

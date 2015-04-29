@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Edit Profile</title>
+</head>
+<body>
+    <div id="edit">
+    <h1>Update Profile</h1>
+        <table class="table table-hover">
+            <thead>
+               <tr>
+                   <th>Field</th>
+                   <th>Form</th>
+               </tr> 
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Password</td>
+                    <td><input ng-model="currentUser.password" class="form-control" type="password" /></td>
+                </tr>
+                <tr>
+                    <td>FirstName</td>
+                    <td><input ng-model="currentUser.firstName" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td>LastName</td>
+                    <td><input ng-model="currentUser.lastName" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input ng-model="currentUser.email" class="form-control" type="email" /></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input ng-model="currentUser.address" class="form-control" /></td>
+                </tr>
+            </tbody>
+
+        </table>
+  
+ 
+    <button class="btn btn-warning" ng-click="update(currentUser)">Update</button>
+    </div>
+</body>
+</html>
+ 
+
+   

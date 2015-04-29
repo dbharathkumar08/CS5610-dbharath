@@ -1,0 +1,220 @@
+
+
+
+<div class="top-padding">
+    <h1 class="profilecolor">Profile</h1>
+
+
+    <h3 class="welcomecolor">Welcome to your Home Page {{userprofile.username}}</h3>
+    <div class="tablecolor1">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>
+                        <div class="pull-right">
+                            Details
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <div class="pull-right">
+                            {{userprofile.username}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>FirstName</td>
+
+                    <td>
+                        <div class="pull-right">
+                            {{userprofile.firstName}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LastName</td>
+
+                    <td>
+                        <div class="pull-right">
+                            {{userprofile.lastName}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+
+                    <td>
+                        <div class="pull-right">
+                            {{userprofile.email}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+
+                    <td>
+                        <div class="pull-right">
+                            {{userprofile.address}}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div ng-show="details">
+        <h2 class="detailscolor">Details</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <img ng-src="{{details.urlPoster}}" />
+            </div>
+            <div class="col-sm-8">
+                {{details.rated}}
+                {{details.year}}
+
+                <span>Languages:</span>
+                <ul>
+                    <li ng-repeat="language in details.languages">{{language}}</li>
+                </ul>
+                Genres:
+                <ul>
+                    <li ng-repeat="genre in details.genres">{{genre}}</li>
+                </ul>
+
+                <p>
+                    {{details.plot}}
+                </p>
+
+            </div>
+        </div>
+        <h3>
+            <a href="#/movie_details/{{details.idIMDB}}">{{details.title}}</a>
+        </h3>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="tablecolor2">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Following</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody ng-repeat="following in follow.following">
+                        <tr>
+                            <td>
+                                <a href="#/other_profile_details/{{following}}">{{following}}</a>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="tablecolor3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Follower</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody ng-repeat="follower in follow.follower">
+                        <tr>
+                            <td>
+                                <a href="#/other_profile_details/{{follower}}">{{follower}}</a>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <h3 class="reviewcolor">{{userprofile.username}} reviews</h3>
+    <div class="tablecolor">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Movie NAME</th>
+                    <th>Comments</th>
+                    <th>
+                        <div class="pull-right">
+                            User Ratings
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="reviewmodel in reviewmodel">
+                <tr>
+                    <td>
+                        <a href="#/movie_details/{{reviewmodel.idIMDB}}">{{reviewmodel.title}}</a>
+                    </td>
+                    <td>{{reviewmodel.comments}}</td>
+                    <td>
+                        <div class="pull-right">
+                            {{reviewmodel.userrating}}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="Favmoviecolor">Favorite Movies</h2>
+    <div class="tablecolor">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>
+                        <div class="pull-right">
+                            Get Details
+                        </div>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody ng-repeat="favmovies in favmovies">
+                <tr>
+                    <td>{{favmovies.title}}</td>
+                    <td>
+                        <div class="pull-right">
+                            <button ng-click="detailsMovie(favmovies)" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+</div>

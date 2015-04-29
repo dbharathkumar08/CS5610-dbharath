@@ -1,0 +1,135 @@
+
+<h1>Profile</h1>
+
+{{currentUser}}
+
+<h1>User Profile</h1>
+
+
+        <ul>
+            <li>{{userprofile.username}}</li>
+            <li>{{userprofile.firstName}}</li>
+            <li>{{userprofile.lastName}}</li>
+            <li>{{userprofile.email}}</li>
+        </ul>
+        
+
+
+   
+
+
+<div ng-show="details">
+    <h2>Details</h2>
+    <div class="row">
+        <div class="col-sm-4">
+            <img ng-src="{{details.urlPoster}}" />
+        </div>
+        <div class="col-sm-8">
+            {{details.rated}}
+            {{details.year}}
+
+            <span>Languages:</span>
+            <ul>
+                <li ng-repeat="language in details.languages">{{language}}</li>
+            </ul>
+            Genres:
+            <ul>
+                <li ng-repeat="genre in details.genres">{{genre}}</li>
+            </ul>
+
+            <p>
+                {{details.plot}}
+            </p>
+            
+        </div>
+    </div>
+    <h3>
+        <a href="#/movie_details/{{details.idIMDB}}">{{details.title}}</a>
+   </h3>
+    
+</div>
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Following</th>
+
+            </tr>
+
+        </thead>
+        <tbody ng-repeat="following in follow.following">
+            <tr>
+                <td>
+                    {{following}}
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Follower</th>
+
+            </tr>
+
+        </thead>
+        <tbody ng-repeat="follower in follow.follower">
+            <tr>
+                <td>
+                    {{follower}}
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Movie NAME</th>
+                <th>UserName</th>
+                <th>Comments</th>
+                <th>User Ratings</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="reviewmodel in reviewmodel">
+            <tr>
+                <td>{{reviewmodel.title}}</td>
+                <td>{{reviewmodel.username}}</td>
+                <td>{{reviewmodel.comments}}</td>
+                <td>{{reviewmodel.userrating}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<h2>Favorite Movies</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Movie NAME</th>
+               
+            </tr>
+        </thead>
+        <tbody ng-repeat="favmovies in favmovies">
+            <tr>
+                <td>{{favmovies.title}}</td>
+                <td>
+                    <button ng-click="detailsMovie(favmovies)" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <div>
+        
+
+        
+    </div>
